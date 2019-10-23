@@ -33,7 +33,7 @@ app.group("/api/v1", (router) => {
 
     //Episode API
     router.get('/episodes', EpisodeController.index)
-    router.get('/webtoon/:webtoonId/episodes', EpisodesController.show);
+    router.get('/webtoon/:webtoonId/episodes', EpisodeController.show);
     router.get('/user/:user_id/webtoon/:webtoon_id/episodes',authenticated, EpisodeController.showcreation)
     router.get('/user/:user_id/webtoon/:webtoon_id/episodes',authenticated, EpisodeController.showcreation)
     router.get('/user/:user_id/webtoon/:webtoon_id/episodes',authenticated, EpisodeController.showcreation)
