@@ -6,8 +6,15 @@ exports.index = (req, res) => {
 }
 
 exports.show = (req, res) => {
-    Episode.findAll({where:{Webtoon_id: req.params.webtoon_id}}).then(result=> res.send(result))
-}
+  Episode.findAll({
+    where: {
+      webtoon_id: req.params.webtoonId,
+    },
+    order: [
+      ['id', 'DESC'],
+    ],
+  }).then(episodes => res.send(episodes));
+};
 
 exports.showepisode = (req, res) => {
     Episode.findAll({
